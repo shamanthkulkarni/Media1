@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="methode.methodeelectronics_newdb">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/usblaunch"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <receiver
+                android:name=".HearCountReceiver"
+                android:enabled="true"
+                android:exported="true">
+                <intent-filter>
+                    <action android:name="methode.methodeelectronics_newdb.sendcountmp3" />
+                </intent-filter>
+            </receiver>
+        </activity>
+
+        <service
+            android:name=".MyBackgroundService"
+            android:exported="false" />
+
+        <activity android:name=".DisplayActivity" />
+        <activity android:name=".methodelogo" />
+        <activity
+            android:name=".Videoplayback"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+        <activity android:name=".Imageviewplay"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">></activity>
+    </application>
+
+</manifest>
